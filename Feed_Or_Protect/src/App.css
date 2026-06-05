@@ -1,0 +1,14 @@
+/* 모든 요소의 마진과 패딩 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 화면 스크롤을 막고 100% 꽉 차게 설정 */
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0708; /* 이미지 로딩 전 기본 배경색 */
+  overflow: hidden; /* 웹 브라우저 스크롤바 숨김 */
+}
