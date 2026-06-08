@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';            
 import './VisualNovelUI.css';   
-import backgroundImage from './assets/bg.png'; 
+import INTRO from './assets/intro.png'; 
+import SCENE1 from './assets/scene1.png'
+import BG from './assets/bg.png';
+import SCENE1_A from './assets/scene1_a.png';
+import SCENE2_D from './assets/scene2_d.png';
+import SCENE2_M from './assets/scene2_m.png';
+import SCENE3 from './assets/scene3.png';
+import SCENE3_P from './assets/scene3_p.png';
+import SCENE3_A from './assets/scene3_a.png'
+import SCENE3_A2 from './assets/scene3_a2.png';
 
-// ==========================================================================
-// 📖 주신 기획서 원본의 글씨, 기호, 줄바꿈을 단 하나도 틀리지 않고 그대로 반영한 데이터
-// ==========================================================================
 const SCENARIO = {
-  // 🌍 세계관 배경 / 오프닝 내레이션 / 타이틀 전 인트로
-  // 🌍 세계관 배경 / 오프닝 내레이션 / 타이틀 전 인트로
   intro: {
+    background: BG,
     chapter: "오프닝",
     location: "세계관 배경 — 인트로",
     name: "내레이션",
@@ -19,6 +24,7 @@ const SCENARIO = {
 
   // 📖 ACT 1 — 침입자 [씬 1 — 이안의 하루]
   scene1: {
+    background : INTRO,
     chapter: "ACT 1 — 침입자",
     location: "뱀파이어 거주 구역 외곽. 허물어져 가는 철조망 근처.",
     name: "이안 (혼잣말)",
@@ -31,6 +37,7 @@ const SCENARIO = {
 
   // ✅ 선택지 1 — A 선택 후 진행
   scene1_A: {
+    background: SCENE1,
     chapter: "ACT 1 — 침입자",
     location: "뱀파이어 거주 구역 외곽. 허물어져 가는 철조망 근처.",
     name: "시스템",
@@ -40,6 +47,7 @@ const SCENARIO = {
 
   // [씬 2 — 조우]
   scene2: {
+    background: SCENE1_A,
     chapter: "ACT 1 — 침입자",
     location: "철조망 근처 풀숲",
     name: "내레이션",
@@ -47,6 +55,7 @@ const SCENARIO = {
     options: [{ text: "다음", nextScene: "scene2_dialogue" }]
   },
   scene2_dialogue: {
+    background : SCENE2_D,
     chapter: "ACT 1 — 침입자",
     location: "철조망 근처 풀숲",
     name: "대화",
@@ -54,6 +63,7 @@ const SCENARIO = {
     options: [{ text: "다음", nextScene: "scene2_monologue" }]
   },
   scene2_monologue: {
+    background : SCENE2_M,
     chapter: "ACT 1 — 침입자",
     location: "철조망 근처 풀숲",
     name: "이안 (혼잣말)",
@@ -63,6 +73,7 @@ const SCENARIO = {
 
   // [씬 3 — 정보 파악]
   scene3: {
+    background : SCENE3,
     chapter: "ACT 1 — 침입자",
     location: "근처 창고",
     name: "대화",
@@ -70,6 +81,7 @@ const SCENARIO = {
     options: [{ text: "이름과 나이를 물어본다", nextScene: "scene3_profile" }]
   },
   scene3_profile: {
+    background : SCENE3_P,
     chapter: "ACT 1 — 침입자",
     location: "근처 창고",
     name: "대화",
@@ -82,15 +94,17 @@ const SCENARIO = {
 
   // ✅ 선택지 2 — A 선택 — 정상 진행
   scene3_A: {
+    background : SCENE3_A,
     chapter: "ACT 1 — 침입자",
     location: "근처 창고",
     name: "시스템",
     text: "이안이 철조망 너머로 데려다줄 경로를 탐색하기 시작한다. 지금은 순찰 시간대라 루트를 골라야 한다.",
-    options: [{ text: "다음 스토리 대기", nextScene: "intro" }] // 💡 추후 연재할 다음 씬 연결부
+    options: [{ text: "다음 스토리 대기", nextScene: "intro" }] 
   },
 
   // ❌ 선택지 2 — B 선택 — 배드엔딩 플래그
   scene3_B_bad_route: {
+    
     chapter: "ACT 1 — 침입자",
     location: "근처 창고",
     name: "대화",
@@ -127,6 +141,7 @@ const SCENARIO = {
   },
   // 📖 ACT 2 — 숨바꼭질 [씬 4 — 세린의 방문]
   scene3_A: {
+    background : SCENE3_A2,
     chapter: "ACT 2 — 숨바꼭질",
     location: "근처 창고",
     name: "대화",
@@ -346,7 +361,7 @@ function App() {
       {/* 배경 이미지 레이어 */}
       <div className="vn-background-layer">
         <img 
-          src={backgroundImage} 
+          src={currentScene.background} 
           className="vn-bg-img" 
           alt="Visual Novel Background" 
         />
