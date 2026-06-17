@@ -179,7 +179,198 @@
     border-bottom: 1px solid #3d312a;
     
     transition: all 0.2s ease;
-  }
+  }/* 전체 화면 기본 설정 */
+.vn-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+  background-color: #000;
+}
+
+/* 배경 이미지 구도 고정 */
+.vn-background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.vn-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; 
+}
+
+/* 왼쪽 상단 정보 텍스트 */
+.vn-top-info {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.vn-info-chapter {
+  font-size: 0.9rem;
+  color: #7d6c5f; 
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.vn-info-location {
+  font-size: 1.05rem;
+  color: #bfaea2; 
+}
+
+/* 하단 UI 오버레이 (대화창과 버튼 전체 감싸기) */
+.vn-ui-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0) 100%);
+  padding-bottom: 30px; 
+  box-sizing: border-box;
+}
+
+/* 🎯 [대화창 바디] 원본처럼 슬림하고 가로로 길게 확장, 글씨 잘림 절대 방지 */
+.vn-dialogue-box {
+  position: relative;
+  width: 94%;
+  max-width: 1300px;
+  /* 글씨가 절대 잘리지 않도록 유연하게 늘어나면서도 기본 높이를 유지 */
+  min-height: 155px; 
+  height: auto;
+  background: rgba(11, 8, 9, 0.85); 
+  
+  /* 원본의 고풍스럽고 섬세한 얇은 이중 테두리 재현 */
+  border: 1px solid #3a302a;
+  outline: 1px solid #1c1614;
+  outline-offset: -3px;
+  
+  /* 패딩을 조절해 텍스트가 박스 내부 정중앙에 편안하게 위치하도록 설정 */
+  padding: 40px 50px 30px 50px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* 🎯 [이름표 스타일] 박스 내부가 아닌, 원본처럼 왼쪽 상단 테두리 "위"에 얹어지도록 교정 */
+.vn-name-tag {
+  position: absolute;
+  top: -16px; /* 박스 위쪽으로 확실히 올림 */
+  left: 45px;
+  background: #140f10;
+  
+  /* 원본 느낌의 얇고 어두운 금속질감 테두리 조절 */
+  border: 1px solid #4a3b34;
+  padding: 3px 25px;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 이름표 좌우의 얇은 장식 데코 십자 기호 (✦) */
+.vn-name-tag::before {
+  content: '✦';
+  color: #8c7362;
+  font-size: 0.75rem;
+}
+.vn-name-tag::after {
+  content: '✦';
+  color: #8c7362;
+  font-size: 0.75rem;
+}
+
+.vn-name-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d1bba6;
+  letter-spacing: 0.5px;
+}
+
+/* 🎯 [대사 텍스트 스타일] 좌측 정렬 및 가독성 자간/행간 최적화 */
+.vn-text-content {
+  text-align: left;
+}
+
+.vn-text-content p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dcd1c4;
+  word-break: keep-all;
+  letter-spacing: 0.2px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* 우측 하단 진행 붉은 다이아몬드 커서 */
+.vn-next-cursor {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  color: #9e2323;
+  font-size: 0.85rem;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* 선택지 컨테이너 */
+.vn-options-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 94%;
+  max-width: 1300px;
+  box-sizing: border-box;
+}
+
+/* 🎯 [선택지 버튼] 원본 스크린샷처럼 가로로 길고 슬림하며 모서리가 미세하게 깎인 고급 다이아몬드 바 */
+.vn-option-button {
+  flex: 1;
+  background: rgba(14, 11, 12, 0.92);
+  color: #b3a294;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  
+  /* 양 끝의 미세한 각을 살리기 위한 정밀 clip-path */
+  clip-path: polygon(6px 0%, calc(100% - 6px) 0%, 100% 50%, calc(100% - 6px) 100%, 6px 100%, 0% 50%);
+  
+  /* 슬림한 형태 유지를 위해 상하 보더 라인 강조 */
+  border-top: 1px solid #3d312a;
+  border-bottom: 1px solid #3d312a;
+  
+  transition: all 0.2s ease;
+}
+
+/* 버튼 마우스 호버 효과 */
+.vn-option-button:hover {
+  background: rgba(28, 15, 17, 0.95);
+  color: #ffffff;
+  border-top-color: #8c2020;
+  border-bottom-color: #8c2020;
+  box-shadow: inset 0 0 5px rgba(140, 32, 32, 0.3);
+}
+
   
   /* 버튼 마우스 호버 효과 */
   .vn-option-button:hover {
