@@ -19,7 +19,7 @@ import SCENE4_A2 from "./assets/scene4_a2.png";
 import SCENE5_R_B_R from "./assets/scene5_r_b_r.png"
 import SCENE_R_C_P from "./assets/scene5_r_c_p.png"
 import SCENE5_R_C_A from "./assets/scene5_r_c_a.png"
-import BAD4_END from "./assets/bad4_end"
+import BAD4_END from "./assets/bad4_end.png"
 import BAD4_END_C from "./assets/bad4_end_c.png"
 import SCENE5_R_A from "./assets/scene5_r_a.png"
 
