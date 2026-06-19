@@ -83,7 +83,9 @@ const SCENARIO = {
     location: "뱀파이어 거주 구역 외곽. 철조망 근처.",
     name: "이안",
     text: "이안이 끼어들 틈이 없었다. 아이는 구역 실력자들에게 넘겨졌고, 인간 구역과의 협상 카드가 됐다. 이안은 먼 발치에서 아이가 끌려가는 걸 바라봤다. 아이는 끝까지 울지 않았다. 그게 더 마음에 걸렸다.\n— 엔딩: 방관자",
-    options: [{ text: "처음부터 다시 하기", nextScene: "start" }], // 🔄 타이틀(start)로 루프
+    requireButton: true,
+
+    options: [{ text: "처음부터 다시 하기", nextScene: "start" }], 
   },
 
   // ✅ 선택지 1 — A 선택 (스토리 정상 진행)
@@ -161,7 +163,9 @@ const SCENARIO = {
     location: "근처 창고 내부",
     name: "내레이션",
     text: "너무 오래 머뭇거렸다. 구역 전체가 알아버리는 데 오 분도 걸리지 않았다. 이안은 아토 앞에 서서 끝까지 막아보려 했지만, 혼자서는 역부족이었다. 아토는 이안의 손을 꼭 잡고 있다가 놓였다. 그 작은 손의 온기가 한참 동안 사라지지 않았다.\n— 엔딩: 머뭇거림",
-    options: [{ text: "처음부터 다시 하기", nextScene: "start" }], // 🔄 루프 수정
+    requireButton: true,
+
+    options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 
   // ✅ 선택지 2 — A 선택 (스토리 정상 진행)
@@ -208,6 +212,7 @@ const SCENARIO = {
     location: "근처 창고 앞",
     name: "내레이션",
     text: "세린은 미안하다고 했다. 이안도 그걸 알았다. 그래서 더 할 말이 없었다. 아토는 끌려가면서도 이안을 돌아봤다. 손을 흔들었다. 아직도 뭐가 문제인지 모르는 얼굴로.\n— 엔딩: 선의의 배신",
+    requireButton: true,
     options: [{ text: "처음부터 다시 하기", nextScene: "start" }], // 🔄 루프 수정
   },
 
@@ -287,6 +292,7 @@ const SCENARIO = {
     location: "구역 중심부",
     name: "내레이션",
     text: "하지만 이안은 구역 규칙을 어긴 대가로 한동안 외부 출입이 금지됐다. 아이가 실려 가며 뒤돌아 손을 흔들었다. 이안은 그 손을 끝까지 바라봤다.\n\n— 엔딩: 대가",
+    requireButton: true,
     options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 
@@ -362,6 +368,8 @@ const SCENARIO = {
     location: "구역 광장",
     name: "내레이션",
     text: "사과는 때로 약함으로 읽힌다. 거롯은 아토를 협상 카드로 삼기로 했다. 이안은 막으려 했지만 혼자였다. 아토는 끝내 이안의 손을 놓쳤다. 형, 하고 부르는 목소리가 멀어졌다. 이안은 그날 이후 오랫동안 그 목소리를 잊지 못했다.\n— 엔딩: 굴복",
+    requireButton: true,
+
     options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 
