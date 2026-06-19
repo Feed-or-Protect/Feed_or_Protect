@@ -16,13 +16,25 @@ import BAD1_END from "./assets/bad1_end.png";
 import BAD3_END from "./assets/bad3_end.png";
 import SCENE4_A_N from "./assets/scene4_a_n.png";
 import SCENE4_A2 from "./assets/scene4_a2.png";
-import SCENE5_R_B_R from "./assets/scene5_r_b_r.png"
-import SCENE_R_C_P from "./assets/scene5_r_c_p.png"
-import SCENE5_R_C_A from "./assets/scene5_r_c_a.png"
-import BAD4_END from "./assets/bad4_end.png"
-import BAD4_END_C from "./assets/bad4_end_c.png"
-import SCENE5_R_A from "./assets/scene5_r_a.png"
-
+import SCENE5_R_B_R from "./assets/scene5_r_b_r.png";
+import SCENE_R_C_P from "./assets/scene5_r_c_p.png";
+import SCENE5_R_C_A from "./assets/scene5_r_c_a.png";
+import BAD4_END from "./assets/bad4_end.png";
+import BAD4_END_C from "./assets/bad4_end_c.png";
+import SCENE5_R_A from "./assets/scene5_r_a.png";
+import SCENE5_R_B from "./assets/scene5_r_b.png";
+import SCENE5_R_B2 from "./assets/scene5_r_b2.png";
+import SCENE5_R_S from "./assets/scene5_r_s.png";
+import SCENE6_B_R from "./assets/scene5_r_b.png";
+import BAD5_END from "./assets/bad5_end.png";
+import SCENE6_A from "./assets/scene6_a.png";
+import SCENE6_A2_F from "./assets/scene6_a2_f.png";
+import SCENE8_B from "./assets/scene8_b.png";
+import SCENE8_P from "./assets/scene8_p.png";
+import SCENE5_R_A2 from "./assets/scene5_r_a2.png";
+import SCENE9_E from "./assets/scene9_e.png";
+import SCENE9_F_E from "./assets/scene9_f_e.png";
+import EPILOGUE from "./assets/epilogue.png";
 
 const SCENARIO = {
   // 🎬 시작 화면 (타이틀 메타 정보 반영)
@@ -33,7 +45,7 @@ const SCENARIO = {
     hideDialogue: true,
     options: [{ text: "시작하기", nextScene: "intro" }],
   },
-  
+
   intro: {
     background: BG,
     chapter: "오프닝",
@@ -127,7 +139,10 @@ const SCENARIO = {
     text: '이름을 물으니 "김아토"라고 한다. 몇 살이냐고 물으니 손가락 다섯 개를 편다.\n\n아토: 형은?\n이안: ……백쉰세.\n아토: 우와, 할아버지다.\n이안: 아니거든.',
     options: [
       { text: 'A. "빨리 돌려보낼 방법을 생각하자."', nextScene: "scene3_A" },
-      { text: 'B. "일단 여기 숨겨두고 상황을 파악하자."', nextScene: "scene3_B_bad_route" },
+      {
+        text: 'B. "일단 여기 숨겨두고 상황을 파악하자."',
+        nextScene: "scene3_B_bad_route",
+      },
     ],
   },
 
@@ -167,8 +182,14 @@ const SCENARIO = {
     name: "대화",
     text: "창고에 있는데 문을 두드리는 소리.\n\n세린: 이안, 거기 있어? 오늘 구역 회의 있는 거 알지?",
     options: [
-      { text: 'A. 살짝 문을 열고 "나 좀 아파서 못 간다"고 한다.', nextScene: "scene4_A" },
-      { text: "B. 아토한테 조용히 있으라 신호하고 문을 연다.", nextScene: "scene4_B_bad_route" },
+      {
+        text: 'A. 살짝 문을 열고 "나 좀 아파서 못 간다"고 한다.',
+        nextScene: "scene4_A",
+      },
+      {
+        text: "B. 아토한테 조용히 있으라 신호하고 문을 연다.",
+        nextScene: "scene4_B_bad_route",
+      },
     ],
   },
 
@@ -234,39 +255,39 @@ const SCENARIO = {
     options: [{ text: "앞으로 나아간다", nextScene: "scene5_routeC_puzzle" }],
   },
   scene5_routeC_puzzle: {
-    background: SCENE_R_C_P, 
+    background: SCENE_R_C_P,
     chapter: "ACT 2 — 숨바꼭질",
     location: "지하 수로 철제 문 앞",
     name: "시스템",
     text: "수로 중간에 낡은 철제 문이 잠겨 있다. 자물쇠를 따는 미니 퍼즐 진행. 하지만 —",
-    options: [{ nextScene: "scene5_routeC_accident" }], 
+    options: [{ nextScene: "scene5_routeC_accident" }],
   },
 
   scene5_routeC_accident: {
-    background: SCENE5_R_C_A, 
+    background: SCENE5_R_C_A,
     chapter: "ACT 2 — 숨바꼭질",
     location: "지하 수로 철제 문 앞",
     name: "시스템",
     text: "퍼즐을 푸는 사이 아토가 발을 헛디뎌 물에 빠진다. 이안이 재빨리 끌어올리지만, 아토의 옷이 흠뻑 젖고 체온이 급격히 떨어진다. 수로를 빠져나왔을 때 아토는 열이 오르기 시작한다. 뱀파이어 구역에 인간 아이를 치료할 수단은 없다. 이안은 결국 구역 어른들에게 도움을 요청할 수밖에 없고, 아토의 존재가 탄로난다.",
-    options: [{ nextScene: "bad4_end" }], 
+    options: [{ nextScene: "bad4_end" }],
   },
-  
+
   bad4_end: {
-    background: BAD4_END, 
+    background: BAD4_END,
     chapter: "배드엔딩 4 — 수로의 끝",
     location: "지하 수로 밖 / 구역 중심부",
     name: "내레이션",
     text: "이안은 아토를 안고 구역 중심부로 뛰었다. 이미 들킨 거, 아토를 살리는 게 먼저였다. 거롯이 인간 구역에 연락을 취했다. 아토의 부모가 달려왔다. 아토는 살았다.",
-    options: [{ nextScene: "bad4_end_conclusion" }], 
+    options: [{ nextScene: "bad4_end_conclusion" }],
   },
 
   bad4_end_conclusion: {
-    background: BAD4_END_C, 
+    background: BAD4_END_C,
     chapter: "배드엔딩 4 — 수로의 끝",
     location: "구역 중심부",
     name: "내레이션",
     text: "하지만 이안은 구역 규칙을 어긴 대가로 한동안 외부 출입이 금지됐다. 아이가 실려 가며 뒤돌아 손을 흔들었다. 이안은 그 손을 끝까지 바라봤다.\n\n— 엔딩: 대가",
-    options: [{ text: "처음부터 다시 하기", nextScene: "start" }]
+    options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 
   scene5_routeA: {
@@ -275,20 +296,24 @@ const SCENARIO = {
     location: "외곽으로 향하는 큰 길",
     name: "대화",
     text: "당당하게 전면 돌파를 감행하다 정식 야간 순찰대와 딱 마주친다. 이안이 외투로 감싸 안고 자연스럽게 지나가려는데, 아토가 호기심을 참지 못하고 외투 밖으로 꼬물거리며 손을 내밀어 순찰대원의 옷자락을 잡아당긴다.\n\n아토: 아저씨, 옷 멋있어요.\n순찰대원: ……이안, 네 외투 속의 그 작은 손은 뭐지?\n이안: ……조카입니다.\n순찰대원: 조카?\n이안: 혼혈이라 피부가 유독 밝게 태어났습니다. 열이 많이 나서 약을 구하러 가는 길입니다.\n\n★행운 최고조. 이안의 의연한 거짓말에 순찰대원이 어색하게 웃으며 길을 열어준다.",
-    options: [{ text: "최종 관문인 광장 교차로로 향한다", nextScene: "scene5_routeA2" }],
+    options: [
+      { text: "최종 관문인 광장 교차로로 향한다", nextScene: "scene5_routeA2" },
+    ],
   },
 
   scene5_routeB: {
-    background: BG,
+    background: SCENE5_R_B,
     chapter: "ACT 2 — 숨바꼭질",
     location: "거롯의 집 앞 골목 뒷길",
     name: "대화",
     text: "어두컴컴한 사택 골목. 살벌한 인상의 거롯 부하들이 모여 담배를 피우고 있다.\n긴장감에 심장이 터질 것 같은 상태로 그들 사이를 스쳐 지나가는데, 아토가 이안의 손을 꼭 잡고 걷다가 부하 한 명에게 해맑게 손을 흔들며 인사한다.\n\n아토: 안녕하세요!\n부하: ……(당황해서 담뱃재를 떨어뜨림) ……어, 어 그래 꼬맹아 안녕.\n\n아이의 뜬금없는 순수함에 거친 분위기가 사르르 풀려 무사히 골목을 통과한다.",
-    options: [{ text: "최종 관문인 광장 교차로로 향한다", nextScene: "scene5_routeB2" }],
+    options: [
+      { text: "최종 관문인 광장 교차로로 향한다", nextScene: "scene5_routeB2" },
+    ],
   },
 
   scene5_routeA2: {
-    background: BG,
+    background: SCENE5_R_A2,
     chapter: "ACT 3 — 발각",
     location: "구역 중심부 광장 교차로",
     name: "내레이션",
@@ -296,7 +321,7 @@ const SCENARIO = {
     options: [{ text: "주변을 살핀다", nextScene: "scene5_route_spotted" }], // 🆕 중복 제거: 대면 씬 통합
   },
   scene5_routeB2: {
-    background: BG,
+    background: SCENE5_R_B2,
     chapter: "ACT 3 — 발각",
     location: "구역 중심부 광장 교차로",
     name: "내레이션",
@@ -305,36 +330,43 @@ const SCENARIO = {
   },
 
   scene5_route_spotted: {
-    background: BG,
+    background: SCENE5_R_S,
     chapter: "ACT 3 — 발각",
     location: "구역 광장 한복판",
     name: "대화",
     text: "하필 그 자리를 지나던 구역 최고의 권력자 '거롯'이 걸음을 멈추고 봉지를 주워 올렸다.\n\n거롯: ……이안. 이 구역에 생경한 인간의 냄새가 진동한다 했더니. 이 아이, 인간이구나.\n\n주변에 있던 차가운 눈빛의 뱀파이어들이 순식간에 모여들며 포위망을 좁힌다. 아토는 겁을 먹고 이안의 손을 으스러지게 움켜쥐었다.\n\n거롯: 전쟁 이후 이 음지에 인간의 핏줄이 발을 들인 건 처음이다. 이안, 규칙을 어긴 대가를 어찌 감당하려 하느냐?",
     options: [
-      { text: 'A. "이 아이는 위협이 아니다. 그냥 길 잃은 어린아이야."', nextScene: "scene6_A" },
-      { text: 'B. "……내가 잘못했다. 하지만 이 아이만은 보내줘."', nextScene: "scene6_B_bad_route" },
+      {
+        text: 'A. "이 아이는 위협이 아니다. 그냥 길 잃은 어린아이야."',
+        nextScene: "scene6_A",
+      },
+      {
+        text: 'B. "……내가 잘못했다. 하지만 이 아이만은 보내줘."',
+        nextScene: "scene6_bad_route",
+      },
     ],
   },
 
-  scene6_B_bad_route: {
-    background: BG,
+  scene6_bad_route: {
+    background: SCENE6_B_R,
     chapter: "ACT 3 — 발각",
     location: "구역 광장 한복판",
     name: "대화",
     text: "이안이 결국 고개를 숙인다. 거롯은 무표정하게 이안을 내려다보더니 이내 차갑게 선언한다.\n\n거롯: 사정은 딱하나 규칙은 규칙이다. 이안, 너 또한 이 질서의 무게를 알 터.\n\n아토가 슬픈 눈으로 이안을 올려다본다.\n\n아토: 형, 나 때문에 그래? 괜찮아……?\n\n이안은 차마 아이의 얼굴을 보지 못한 채 입술을 깨물었다.",
     options: [{ text: "다음으로", nextScene: "bad5_end" }],
   },
+
   bad5_end: {
-    background: BG,
+    background: BAD5_END,
     chapter: "배드엔딩 5 — 무릎을 꿇다",
     location: "구역 광장",
     name: "내레이션",
     text: "사과는 때로 약함으로 읽힌다. 거롯은 아토를 협상 카드로 삼기로 했다. 이안은 막으려 했지만 혼자였다. 아토는 끝내 이안의 손을 놓쳤다. 형, 하고 부르는 목소리가 멀어졌다. 이안은 그날 이후 오랫동안 그 목소리를 잊지 못했다.\n— 엔딩: 굴복",
-    options: [{ text: "처음부터 다시 하기", nextScene: "start" }], 
+    options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 
   scene6_A: {
-    background: BG,
+    background: SCENE6_A,
     chapter: "ACT 3 — 발각",
     location: "구역 광장 한복판",
     name: "대화",
@@ -344,7 +376,7 @@ const SCENARIO = {
 
   // 📖 ACT 4 — 귀환 [씬 7 — 이안의 회상]
   scene6_A2_flashback: {
-    background: BG,
+    background: SCENE6_A2_F,
     chapter: "ACT 4 — 귀환",
     location: "구역 외곽으로 향하는 길",
     name: "내레이션",
@@ -354,7 +386,7 @@ const SCENARIO = {
 
   // [씬 8 — 경계선]
   scene8_boundary: {
-    background: BG,
+    background: SCENE8_B,
     chapter: "ACT 4 — 귀환",
     location: "구역 외곽 철조망",
     name: "대화",
@@ -362,7 +394,7 @@ const SCENARIO = {
     options: [{ text: "약속을 나눈다", nextScene: "scene8_promise" }],
   },
   scene8_promise: {
-    background: BG,
+    background: SCENE8_P,
     chapter: "ACT 4 — 귀환",
     location: "구역 외곽 철조망",
     name: "내레이션",
@@ -372,17 +404,22 @@ const SCENARIO = {
 
   // [씬 9 — 엔딩]
   scene9_ending: {
-    background: BG,
+    background: SCENE9_E,
     chapter: "ACT 4 — 귀환",
     location: "구역 외곽 철조망 앞",
     name: "이안 (혼잣말)",
     text: "아토가 철조망 너머로 달려간다. 아빠 품에 와락 안긴다.\n이안은 그 자리에 서서 바라본다.\n\n……153년 살면서 새끼손가락은 처음이네.",
-    options: [{ text: "돌아서서 걷기 시작한다", nextScene: "scene9_fadeout_to_epilogue" }],
+    options: [
+      {
+        text: "돌아서서 걷기 시작한다",
+        nextScene: "scene9_fadeout_to_epilogue",
+      },
+    ],
   },
 
   // [트루 엔딩 스태프롤 페이드아웃]
   scene9_fadeout_to_epilogue: {
-    background: BG,
+    background: SCENE9_F_E,
     chapter: "TRUE ENDING",
     location: "회색 지대 경계선",
     name: "내레이션",
@@ -392,7 +429,7 @@ const SCENARIO = {
 
   // ⏳ 에필로그 — 20년 후 뒷이야기
   epilogue: {
-    background: BG,
+    background: EPILOGUE,
     chapter: "에필로그 — 엔딩 크레딧 후",
     location: "20년 후 — 인간 구역",
     name: "내레이션",
@@ -413,7 +450,8 @@ const SCENARIO = {
     location: "이안의 집 앞",
     name: "내레이션",
     text: "암전.\n이안의 방문 앞에 누군가 서 있다.\n문이 열린다.\n\n\nEND.",
-    options: [{ text: "처음부터 다시 하기", nextScene: "start" }], // 🔄 루프 수정
+    requireButton: true,
+    options: [{ text: "처음부터 다시 하기", nextScene: "start" }],
   },
 };
 
@@ -423,7 +461,19 @@ function App() {
 
   const currentScene = SCENARIO[currentSceneId] || SCENARIO["intro"];
 
-  // 문장 단위 분리 (\n 기준)
+  // =========================
+  // 배경 이미지 전체 프리로드
+  // =========================
+  useEffect(() => {
+    Object.values(SCENARIO).forEach((scene) => {
+      if (scene.background) {
+        const img = new Image();
+        img.src = scene.background;
+      }
+    });
+  }, []);
+
+  // 문장 단위 분리
   const textParts = currentScene.text
     ? currentScene.text
         .split("\n")
@@ -431,37 +481,35 @@ function App() {
         .filter((t) => t !== "")
     : [];
 
-  // 분기 선택지 제공 여부 (선택 버튼이 2개 이상일 때)
-  const hasChoice = currentScene.options && currentScene.options.length > 1;
+  // 분기 선택지 여부
+  const hasChoice =
+    currentScene.options &&
+    (currentScene.options.length > 1 || currentScene.requireButton);
 
-  // 단일 연결용 타겟 링크 확인
+  // 단일 연결 씬
   const autoNextScene =
     currentScene.options && currentScene.options.length === 1
       ? currentScene.options[0].nextScene
       : null;
 
-  // 씬이 완전히 컴포넌트에 로드되면 항상 대사 배열의 0번째 인덱스부터 활성화
+  // 씬 변경 시 텍스트 초기화
   useEffect(() => {
     setTextIndex(0);
   }, [currentSceneId]);
 
   const handleNext = () => {
-    // 1단계: 타이틀 화면 예외 처리
     if (currentSceneId === "start") {
       setCurrentSceneId("intro");
       return;
     }
 
-    // 2단계: 양자택일 분기점 버튼 활성화 중일 땐 바탕화면 클릭을 통한 오버플로우 제한
     if (hasChoice) return;
 
-    // 3단계: 현재 보고 있는 씬의 하위 줄바꿈 텍스트가 더 남아있다면 순차 출력
     if (textIndex < textParts.length - 1) {
-      setTextIndex(textIndex + 1);
+      setTextIndex((prev) => prev + 1);
       return;
     }
 
-    // 4단계 [🌟 버그 대수술]: 현재 페이지의 마지막 문장 조회가 끝난 '후에' 비로소 다음 단일 씬으로 진행 유도
     if (autoNextScene) {
       setCurrentSceneId(autoNextScene);
     }
@@ -469,22 +517,24 @@ function App() {
 
   return (
     <div className="vn-container" onClick={handleNext}>
-      {/* 렌더링 레이어 1: 시각 노벨 월드 배경 그래픽 */}
+      {/* 배경 */}
       <div className="vn-background-layer">
         <img
           src={currentScene.background}
           className="vn-bg-img"
           alt="Visual Novel Background"
+          draggable="false"
         />
       </div>
 
-      {/* 렌더링 레이어 2: 타이틀을 포함하여 상시 출력되는 메타 상단바 */}
+      {/* 상단 정보 */}
       <div className="vn-top-info">
         <div className="vn-info-chapter">{currentScene.chapter}</div>
+
         <div className="vn-info-location">{currentScene.location}</div>
       </div>
 
-      {/* 렌더링 레이어 3: 게임 타이틀 전용 오버레이 스크린 */}
+      {/* 시작 화면 */}
       {currentSceneId === "start" && (
         <div className="vn-ui-overlay">
           <div className="vn-options-container">
@@ -501,10 +551,9 @@ function App() {
         </div>
       )}
 
-      {/* 인게임 메인 플레이 전용 대사창 및 분기 단추 렌더러 계층 */}
+      {/* 게임 화면 */}
       {currentSceneId !== "start" && (
         <div className="vn-ui-overlay">
-          {/* 하단바: 스크립트 도출 컴포넌트 박스 */}
           <div className="vn-dialogue-box">
             <div className="vn-name-tag">
               <span className="vn-name-text">{currentScene.name}</span>
@@ -514,10 +563,12 @@ function App() {
               <p>{textParts[textIndex]}</p>
             </div>
 
-            {!hasChoice && <div className="vn-next-cursor">♦</div>}
+            {!hasChoice && !currentScene.requireButton && (
+              <div className="vn-next-cursor">♦</div>
+            )}
           </div>
 
-          {/* 인게임 실시간 인터랙티브 의사결정 분기 버튼 세트 */}
+          {/* 선택지 */}
           {hasChoice && (
             <div className="vn-options-container">
               {currentScene.options.map((option, idx) => (
